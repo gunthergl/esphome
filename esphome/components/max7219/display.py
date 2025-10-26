@@ -3,6 +3,7 @@ from esphome.components import display, spi
 import esphome.config_validation as cv
 from esphome.const import CONF_ID, CONF_INTENSITY, CONF_LAMBDA, CONF_NUM_CHIPS
 
+AUTO_LOAD = ["spi"]
 DEPENDENCIES = ["spi"]
 
 max7219_ns = cg.esphome_ns.namespace("max7219")
