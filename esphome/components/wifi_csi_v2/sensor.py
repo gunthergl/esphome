@@ -9,13 +9,13 @@ from esphome.const import (
 )
 
 DEPENDENCIES = ["wifi"]
-wifi_signal_ns = cg.esphome_ns.namespace("wifi_csi_v2")
-WiFiSignalSensor = wifi_signal_ns.class_(
-    "WiFiSignalSensor", sensor.Sensor, cg.PollingComponent
+wifi_csi_v2_ns = cg.esphome_ns.namespace("wifi_csi_v2")
+WiFiCSISensor = wifi_csi_v2_ns.class_(
+    "WiFiCSISensor", sensor.Sensor, cg.PollingComponent
 )
 
 CONFIG_SCHEMA = sensor.sensor_schema(
-    WiFiSignalSensor,
+    WiFiCSISensor,
     unit_of_measurement=UNIT_DECIBEL_MILLIWATT,
     accuracy_decimals=0,
     device_class=DEVICE_CLASS_SIGNAL_STRENGTH,

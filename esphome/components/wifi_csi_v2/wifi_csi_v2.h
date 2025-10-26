@@ -6,9 +6,9 @@
 #include "esphome/components/wifi/wifi_component.h"
 #ifdef USE_WIFI
 namespace esphome {
-namespace wifi_signal {
+namespace wifi_csi_v2 {
 
-class WiFiSignalSensor : public sensor::Sensor, public PollingComponent {
+class WiFiCSISensor : public sensor::Sensor, public PollingComponent {
  public:
   void update() override { this->publish_state(wifi::global_wifi_component->wifi_rssi()); }
   void dump_config() override;
@@ -16,6 +16,6 @@ class WiFiSignalSensor : public sensor::Sensor, public PollingComponent {
   float get_setup_priority() const override { return setup_priority::AFTER_WIFI; }
 };
 
-}  // namespace wifi_signal
+}  // namespace wifi_csi_v2
 }  // namespace esphome
 #endif

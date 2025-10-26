@@ -3,12 +3,12 @@
 #include "esphome/core/log.h"
 
 namespace esphome {
-namespace wifi_signal {
+namespace wifi_csi_v2 {
 
-static const char *const TAG = "wifi_signal.sensor";
+static const char *const TAG = "wifi_csi_v2.sensor";
 
-void WiFiSignalSensor::dump_config() { LOG_SENSOR("", "WiFi Signal", this); }
+void WiFiSignalSensor::dump_config() { LOG_SENSOR("", "WiFi CSI", this); }
 
-}  // namespace wifi_signal
+}  // namespace wifi_csi_v2
 }  // namespace esphome
 #endif
