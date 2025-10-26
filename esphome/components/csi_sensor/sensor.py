@@ -1,0 +1,27 @@
+import esphome.codegen as cg
+from esphome.components import sensor
+import esphome.config_validation as cv
+from esphome.const import (
+    DEVICE_CLASS_SIGNAL_STRENGTH,
+    ENTITY_CATEGORY_DIAGNOSTIC,
+    STATE_CLASS_MEASUREMENT,
+    UNIT_DECIBEL_MILLIWATT,
+)
+
+DEPENDENCIES = ["wifi"]
+csi_sensor_ns = cg.esphome_ns.namespace("csi_sensor")
+CSISensor = csi_sensor_ns.class_("CSISensor", sensor.Sensor, cg.PollingComponent)
+
+CONFIG_SCHEMA = sensor.sensor_schema(
+    CSISensor,
+    unit_of_measurement=UNIT_DECIBEL_MILLIWATT,
+    accuracy_decimals=0,
+    device_class=DEVICE_CLASS_SIGNAL_STRENGTH,
+    state_class=STATE_CLASS_MEASUREMENT,
+    entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
+).extend(cv.polling_component_schema("60s"))
+
+
+async def to_code(config):
+    var = await sensor.new_sensor(config)
+    await cg.register_component(var, config)
