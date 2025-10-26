@@ -7,7 +7,7 @@ namespace wifi_csi_v2 {
 
 static const char *const TAG = "wifi_csi_v2.sensor";
 
-void WiFiSignalSensor::dump_config() { LOG_SENSOR("", "WiFi CSI", this); }
+void WiFiCSISensor::dump_config() { LOG_SENSOR("", "WiFi CSI", this); }
 
 }  // namespace wifi_csi_v2
 }  // namespace esphome
