@@ -11,7 +11,7 @@
 
 #include "esphome.h"
 #include "esphome/core/log.h"
-#include "esphome/components/binary_sensor/binary_sensor.h"
+// #include "esphome/components/binary_sensor/binary_sensor.h"
 #include "esphome/components/wifi/wifi_component.h"
 #ifdef USE_ESP32
 #include <WiFi.h>
@@ -26,7 +26,7 @@ namespace wifi_csi {
 
 // detect motion when the RSSI value from the WiFi reception deviates from the average
 // value. Inspired by: https://gist.github.com/jaretburkett/b2779bd7bf19b0a8e025
-class CsiSensor : public PollingComponent, public binary_sensor::BinarySensor {
+class CsiSensor : public PollingComponent {
  public:
   CsiSensor();
   ~CsiSensor();

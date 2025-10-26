@@ -13,8 +13,8 @@ extern esphome::wifi::WiFiComponent
     *esphome::wifi::global_wifi_component;  // NOLINT(cppcoreguidelines-avoid-non-const-global-variables)
 
 esphome::wifi_csi::CsiSensor::CsiSensor()
-    : PollingComponent(),
-      binary_sensor::BinarySensor(),
+    : PollingComponent()
+      //   binary_sensor::BinarySensor(),
       m_pollingInterval(100),
       m_bufferSize(100),
       m_sensitivity(2),
